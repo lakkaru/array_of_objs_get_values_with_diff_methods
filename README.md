@@ -1,0 +1,1 @@
+# array_of_objs_get_values_with_diff_methods

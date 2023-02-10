@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = [
+        { fName: "Lakshman", lName: "Karunasena", height: 175 },
+        { fName: "Ravi", lName: "Gunasena", height: 170 },
+        { fName: "Sithija", lName: "Lakshan", height: 160 },
+        { fName: "Kulani", lName: "Lakshika", height: 155 },
+        { fName: "Kanila", lName: "Akarsha", height: 155 },
+      ];
+      //getting full names of studets with for loop
+      let fullNamesFor = [];
+      for (let index = 0; index < students.length; index++) {
+        const fullName = students[index].fName + " " + students[index].lName;
+        fullNamesFor.push(fullName); // (5) ['Lakshman Karunasena', 'Ravi Gunasena', 'Sithija Lakshan', 'Kulani Lakshika', 'Kanila Akarsha']
+      }
+      console.log(fullNamesFor);
+      //getting full names of studets with forEach
+      let fullNamesForEach = [];
+      students.forEach(function (arr) {
+        let fullName = arr.fName + " " + arr.lName;
+        fullNamesForEach.push(fullName);
+      });
+      console.log(fullNamesForEach); // (5) ['Lakshman Karunasena', 'Ravi Gunasena', 'Sithija Lakshan', 'Kulani Lakshika', 'Kanila Akarsha']
+
+      //getting full names of studets with array.map
+      const fullNamesMap = students.map(function (arr) {
+        let fullName = arr.fName + " " + arr.lName;
+        return fullName;
+      });
+      console.log(fullNamesMap); // (5) ['Lakshman Karunasena', 'Ravi Gunasena', 'Sithija Lakshan', 'Kulani Lakshika', 'Kanila Akarsha']
+
+      //getting full names of studets with array.reduce
+      const fullNamesRed = students.reduce(function (acc, currEle) {
+        let fullName = currEle.fName + " " + currEle.lName;
+        console.log(typeof fullName); // string
+        console.log(typeof acc); // object
+        acc + fullName;
+        return acc;
+      }, []);
+      console.log(fullNamesMap); // (5) ['Lakshman Karunasena', 'Ravi Gunasena', 'Sithija Lakshan', 'Kulani Lakshika', 'Kanila Akarsha']
+    </script>
+  </body>
+</html>
